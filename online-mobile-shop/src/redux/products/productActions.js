@@ -9,7 +9,9 @@ export const fetchProducts = () => {
   return (dispatch) => {
     dispatch(fetchProductsRequest());
     axios
-      .get("https://jsonplaceholder.typicode.com/products")
+      .get(
+        "https://my-json-server.typicode.com/Ashish7129/online-mobile-store/db"
+      )
       .then((response) => {
         // response.data is the products
         const products = response.data;

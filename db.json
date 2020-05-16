@@ -1,10 +1,12 @@
-[
-  {
-    "id": 1,
-    "name": "IPhone 11",
-    "category": "Apple",
-    "price": 55000,
-    "description": "",
-    "imageUrls": [""]
-  }
-]
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "IPhone 11",
+      "category": "Apple",
+      "price": 55000,
+      "description": "",
+      "imageUrls": [""]
+    }
+  ]
+}
