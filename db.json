@@ -6,7 +6,9 @@
       "category": "Apple",
       "price": 55000,
       "description": "",
-      "imageUrls": [""]
+      "imageUrls": [
+        "https://www.91-img.com/pictures/97744-v1-apple-iphone-7-mobile-phone-large-1.jpg"
+      ]
     }
   ]
 }

@@ -10,7 +10,7 @@ export const fetchProducts = () => {
     dispatch(fetchProductsRequest());
     axios
       .get(
-        "https://my-json-server.typicode.com/Ashish7129/online-mobile-store/db"
+        "https://my-json-server.typicode.com/Ashish7129/online-mobile-store/products"
       )
       .then((response) => {
         // response.data is the products

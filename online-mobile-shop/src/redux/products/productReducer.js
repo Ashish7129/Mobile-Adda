@@ -1,6 +1,6 @@
 import {
   FETCH_PRODUCTS_REQUEST,
-  FETCH_PRODUCT_SUCCESS,
+  FETCH_PRODUCTS_SUCCESS,
   FETCH_PRODUCTS_FAILURE,
 } from "./productConstants";
 
@@ -17,7 +17,7 @@ const reducer = (state = initialState, action) => {
         ...state,
         loading: true,
       };
-    case FETCH_PRODUCT_SUCCESS:
+    case FETCH_PRODUCTS_SUCCESS:
       return {
         loading: false,
         products: action.payload,
