@@ -46,7 +46,11 @@ class ProductCard extends Component {
             >
               {this.props.product.name}
             </div>
-            <Rating name="read-only" value={5} readOnly />
+            <Rating
+              name="read-only"
+              value={this.props.product.rating}
+              readOnly
+            />
             <div style={{ margin: 5 }}>{this.props.product.price} </div>
           </CardContent>
         </CardActionArea>
