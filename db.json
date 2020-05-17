@@ -2,12 +2,24 @@
   "products": [
     {
       "id": 1,
-      "name": "IPhone 11",
+      "name": "Apple iPhone 11",
       "category": "Apple",
-      "price": 55000,
+      "price": 64900,
+      "rating": 4.7,
+      "description": "The Apple iPhone XI is armed with dual primary cameras - 12MP + 12MP lenses. The lenses are assisted by a Back-illuminated sensor (BSI) that helps to click crisp and clear images. The setup is also capable of recording high-definition videos. There is a 12MP front camera accompanied by a Retina Flash. The front snapper does well, which capturing excellent selfies and also assists to facilitate video calling. The device houses non-expandable storage of 64GB, which can save a lot of files and documents in it.",
+      "imageUrls": [
+        "https://www.91-img.com/pictures/132396-v8-apple-iphone-xi-mobile-phone-medium-1.jpg"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Apple iPhone XR",
+      "category": "Apple",
+      "price": 48100,
+      "rating": 4.7,
       "description": "",
       "imageUrls": [
-        "https://www.91-img.com/pictures/97744-v1-apple-iphone-7-mobile-phone-large-1.jpg"
+        "https://www.91-img.com/pictures/129877-v7-apple-iphone-xr-mobile-phone-medium-1.jpg"
       ]
     }
   ]
