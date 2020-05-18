@@ -36,10 +36,6 @@ class ProductCard extends Component {
               alt={this.props.product.name}
             />
           </div>
-          {/* <CardMedia
-            style={{ height: 400 }}
-            image={this.props.product.imageUrls[0]}
-          /> */}
           <CardContent style={{ height: 50 }}>
             <div
               style={{
@@ -92,7 +88,6 @@ class ProductCard extends Component {
               }}
               aria-label="Add to shopping cart"
             >
-              {" "}
               ADD TO CART
             </Button>
           </Tooltip>
