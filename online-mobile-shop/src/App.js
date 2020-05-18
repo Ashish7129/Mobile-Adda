@@ -12,7 +12,7 @@ function App() {
     <div className="App">
       <Header />
       <div className="app-body">
-        <div className="content">
+        <div className="container">
           {/* <CartDialog /> */}
           <Switch>
             <Route path="/" exact component={ProductContainer} />

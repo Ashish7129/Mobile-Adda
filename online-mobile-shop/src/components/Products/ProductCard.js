@@ -19,26 +19,33 @@ class ProductCard extends Component {
     return (
       <Card
         style={{
-          width: 300,
-          height: 570,
+          width: 400,
           margin: 10,
           display: "inline-block",
         }}
       >
         <CardActionArea
+          style={{ display: "flex" }}
           onClick={() => {
             this.props.history.push("/product/" + this.props.product.id);
           }}
         >
-          <CardMedia
+          <div className="card-image">
+            <img
+              src={this.props.product.imageUrls[0]}
+              alt={this.props.product.name}
+            />
+          </div>
+          {/* <CardMedia
             style={{ height: 400 }}
             image={this.props.product.imageUrls[0]}
-          />
+          /> */}
           <CardContent style={{ height: 50 }}>
             <div
               style={{
                 marginLeft: 5,
                 fontWeight: "bold",
+                fontSize: 30,
                 whiteSpace: "nowrap",
                 overflow: "hidden",
                 textOverflow: "ellipsis",
@@ -51,41 +58,43 @@ class ProductCard extends Component {
               value={this.props.product.rating}
               readOnly
             />
-            <div style={{ margin: 5 }}>{this.props.product.price} </div>
+            <div style={{ margin: 5, fontSize: 30 }}>
+              {"Rs. "}
+              {this.props.product.price}{" "}
+            </div>
           </CardContent>
         </CardActionArea>
         <CardActions
-          style={{ display: "flex", alignItems: "center", height: 45 }}
+          style={{ display: "flex", alignItems: "center", height: 70 }}
         >
           <Button
-            size="small"
+            variant="outlined"
+            color="secondary"
+            size="large"
             style={{ marginRight: 60 }}
             onClick={() => {
               this.props.history.push("/product/" + this.props.product.id);
             }}
           >
             {" "}
-            VIEW
+            VIEW DETAIL
           </Button>
           <Tooltip title="Add to cart">
-            <IconButton
-              size="small"
+            <Button
+              variant="outlined"
+              color="secondary"
+              size="large"
               onClick={(e) => {
                 e.stopPropagation();
                 this.props.dispatch(
                   addProductInCart({ ...this.props.product, quantity: 1 })
                 );
               }}
-              color="primary"
               aria-label="Add to shopping cart"
             >
-              <AddCircle
-                style={{
-                  fontSize: 40,
-                  fill: "#ff5400",
-                }}
-              />
-            </IconButton>
+              {" "}
+              ADD TO CART
+            </Button>
           </Tooltip>
         </CardActions>
       </Card>
