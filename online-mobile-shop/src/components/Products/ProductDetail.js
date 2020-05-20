@@ -3,7 +3,6 @@ import CircularProgress from "@material-ui/core/CircularProgress";
 import { connect } from "react-redux";
 import { fetchProducts } from "../../redux";
 import { withRouter } from "react-router-dom";
-import PropTypes from "prop-types";
 
 const mapStateToProps = (state) => {
   return {
@@ -20,34 +19,37 @@ const mapDispatchToProps = (dispatch) => {
 class ProductDetailComponent extends Component {
   state = {
     loading: false,
-    product: null,
+    product: [],
     quantity: 1,
     allProducts: [],
   };
+
+  componentDidMount() {
+    this.setState({
+      allProducts: this.props.productData.products,
+      loading: this.props.productData.loading,
+      product: this.props.productData.products.filter(
+        (x) => x.id == this.props.match.params.id
+      ),
+    });
+  }
+
   render() {
-    this.setState({ allProducts: this.props.productData.products });
-    if (this.state.loading) {
-      return <CircularProgress className="circular" />;
-    }
-    let product = this.props.allProducts.filter(
-      (x) => x.id === this.props.match.params.id
-    );
-    return (
-      <div>
-        {" "}
-        {product.name}
-        {/* {this.props.productData.map((x) => (
-          <div>x.name</div>
-        ))} */}
-        {/* {product.name} {this.props.match.params.id} */}
+    // if (!this.state.loading) {
+    //   return <CircularProgress className="circular" />;
+    // } else if (this.state.loading) {
+    console.log("Products :" + this.state.allProducts);
+    console.log(this.state.product);
+    return this.state.product.map((prod) => (
+      <div key={prod.id}>
+        <div className="leftPart">
+          <img src={prod.imageUrls[0]}></img>
+        </div>{" "}
+        {prod.name}
       </div>
-    );
+    ));
   }
 }
-
-ProductDetailComponent.propTypes = {
-  fetchProducts: PropTypes.func.isRequired,
-};
 
 let ProductDetail = withRouter(
   connect(mapStateToProps, mapDispatchToProps)(ProductDetailComponent)
