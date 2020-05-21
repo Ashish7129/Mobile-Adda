@@ -6,6 +6,8 @@ import Header from "./components/Header/HeaderContainer";
 import Footer from "./components/Footer/FooterContainer";
 import Login from "./components/Login/Login";
 import ProductDetail from "./components/Products/ProductDetail";
+import CartDialog from "./components/Cart/CartDialog";
+import Order from "./components/Cart/Order";
 
 function App() {
   return (
@@ -13,12 +15,12 @@ function App() {
       <Header />
       <div className="app-body">
         <div className="container">
-          {/* <CartDialog /> */}
+          <CartDialog />
           <Switch>
             <Route path="/" exact component={ProductContainer} />
             <Route path="/product/:id" component={ProductDetail} />
             <Route path="/login" component={Login} />
-            {/*<ProtectedRoute path="/order" component={Order} />*/}
+            <Route path="/order" component={Order} />
             <Route
               component={() => (
                 <div style={{ padding: 20 }}>Page not found</div>

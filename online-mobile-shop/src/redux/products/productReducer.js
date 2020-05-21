@@ -19,12 +19,14 @@ const reducer = (state = initialState, action) => {
       };
     case FETCH_PRODUCTS_SUCCESS:
       return {
+        ...state,
         loading: false,
         products: action.payload,
         error: "",
       };
     case FETCH_PRODUCTS_FAILURE:
       return {
+        ...state,
         loading: false,
         products: [],
         error: action.payload,
