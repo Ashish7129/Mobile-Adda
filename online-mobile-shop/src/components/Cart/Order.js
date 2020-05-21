@@ -7,7 +7,7 @@ import TableBody from "@material-ui/core/TableBody";
 import TableCell from "@material-ui/core/TableCell";
 import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
-import { setCheckedOutItems } from "../../redux";
+import { setCheckedOutItems, deleteCart } from "../../redux";
 
 const mapStateToProps = (state) => {
   return {
@@ -73,6 +73,7 @@ class ConnectedOrder extends Component {
           disabled={totalPrice === 0}
           onClick={() => {
             this.props.dispatch(setCheckedOutItems([]));
+            this.props.dispatch(deleteCart([]));
           }}
           style={{ margin: 5, marginTop: 30 }}
         >

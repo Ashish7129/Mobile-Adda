@@ -31,6 +31,11 @@ const cartReducer = (state = initialState, action) => {
         ...state,
         cartItems: state.cartItems.filter((x) => x.id !== action.payload),
       };
+    case CONSTANTS.DELETE_CART:
+      return {
+        ...state,
+        cartItems: [],
+      };
     case CONSTANTS.UPDATE_CART_PRODUCT_QUANTITY: {
       let index = state.cartItems.findIndex((x) => x.id === action.payload.id);
 

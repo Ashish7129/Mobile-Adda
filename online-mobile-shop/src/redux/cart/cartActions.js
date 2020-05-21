@@ -12,6 +12,10 @@ export const deleteCartProduct = (id) => ({
   type: CONSTANTS.DELETE_CART_PRODUCT,
   payload: id,
 });
+export const deleteCart = (items) => ({
+  type: CONSTANTS.DELETE_CART,
+  payload: items,
+});
 export const updateCartProductQnt = (object) => ({
   type: CONSTANTS.UPDATE_CART_PRODUCT_QUANTITY,
   payload: object,
