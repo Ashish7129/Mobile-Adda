@@ -227,42 +227,6 @@
         "https://www.91-img.com/gallery_images_uploads/0/b/0b1bf85a924213b991047321791afcc993ab6fdb.jpg",
         "https://www.91-img.com/pictures/135613-v10-samsung-galaxy-m31-mobile-phone-thumb-1.jpg"
       ]
-    },
-    {
-      "id": 22,
-      "name": "Samsung Galaxy M21",
-      "category": "Samsung",
-      "price": 12699,
-      "rating": 4.2,
-      "imageUrls": [
-        "https://www.91-img.com/pictures/135612-v6-samsung-galaxy-m21-mobile-phone-medium-1.jpg",
-        "https://www.91-img.com/gallery_images_uploads/6/5/6503e7e66a2a855f70e4b704ce666f05a4190cdb.jpg",
-        "https://www.91-img.com/pictures/135612-v6-samsung-galaxy-m21-mobile-phone-thumb-1.jpg"
-      ]
-    },
-    {
-      "id": 23,
-      "name": "Samsung Galaxy A51",
-      "category": "Samsung",
-      "price": 23999,
-      "rating": 4.3,
-      "imageUrls": [
-        "https://www.91-img.com/pictures/136277-v3-samsung-galaxy-a51-mobile-phone-medium-1.jpg",
-        "https://www.91-img.com/gallery_images_uploads/c/e/cec15efee2137420887308f964c79fd35b4a66ad.jpg",
-        "https://www.91-img.com/pictures/136277-v3-samsung-galaxy-a51-mobile-phone-thumb-1.jpg"
-      ]
-    },
-    {
-      "id": 24,
-      "name": "Samsung Galaxy M30s",
-      "category": "Samsung",
-      "price": 15500,
-      "rating": 4.4,
-      "imageUrls": [
-        "https://www.91-img.com/pictures/134823-v5-samsung-galaxy-m30s-mobile-phone-medium-1.jpg",
-        "https://www.91-img.com/gallery_images_uploads/3/d/3d588b3656847829a58f79fce7b35bfc71e07e9e.jpg",
-        "https://www.91-img.com/pictures/134823-v5-samsung-galaxy-m30s-mobile-phone-thumb-1.jpg"
-      ]
     }
   ]
 }
