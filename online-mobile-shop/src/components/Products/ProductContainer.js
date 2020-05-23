@@ -1,11 +1,7 @@
 import React, { useEffect, Component } from "react";
 import axios from "axios";
 import { connect } from "react-redux";
-import {
-  fetchProductsFailure,
-  fetchProductsSuccess,
-  fetchProductsRequest,
-} from "../../redux";
+import { fetchProductsFailure, fetchProductsSuccess } from "../../redux";
 import { withRouter } from "react-router-dom";
 import queryString from "query-string";
 import CircularProgress from "@material-ui/core/CircularProgress";
@@ -95,8 +91,6 @@ class ProductContainer extends Component {
       }
       return true;
     };
-
-    // We will refetch products only when query string changes.
     if (!areSameObjects(currentQS, oldQS)) {
       this.SearchAndSort();
     }
@@ -104,7 +98,7 @@ class ProductContainer extends Component {
 
   sortByPrice(data, sortval) {
     if (sortval !== "lh" && sortval !== "hl") return data;
-    console.log("sort" + data);
+    //console.log("sort" + data);
     let items = [...data];
 
     if (sortval === "lh") {
@@ -112,19 +106,19 @@ class ProductContainer extends Component {
     } else {
       items.sort((a, b) => b.price - a.price);
     }
-    console.log("aftersort" + data);
+    //console.log("aftersort" + data);
     return items;
   }
 
   SearchAndSort() {
     let termToSearch = queryString.parse(window.location.search);
-    console.log(termToSearch);
+    //console.log(termToSearch);
     termToSearch.page = termToSearch.page || 1;
     termToSearch.sortValue = termToSearch.sortValue || "lh";
 
     let resultData = this.props.productData.products;
-    console.log(this.state.totalProducts);
-    console.log("Insearch :" + resultData);
+    //console.log(this.state.totalProducts);
+    //console.log("Insearch :" + resultData);
     if (termToSearch) {
       if (termToSearch.term) {
         resultData = this.state.products.filter((product) => {
@@ -139,16 +133,16 @@ class ProductContainer extends Component {
       }
 
       resultData = this.sortByPrice(resultData, termToSearch.sortValue);
-      console.log("AftSort :" + resultData);
+      //console.log("After Sort :" + resultData);
       if (termToSearch.page) {
         resultData = resultData.slice(
           (termToSearch.page - 1) * 2,
           termToSearch.page * 2
         );
       }
-      console.log("Insearchaa :" + resultData);
+      //console.log("Insearch after all computations :" + resultData);
     }
-    console.log("Afyersearch :" + resultData);
+    //console.log("Aftersearch :" + resultData);
     return { termToSearch, resultData };
   }
 }
@@ -157,11 +151,5 @@ const mapStateToProps = (state) => {
     productData: state.products,
   };
 };
-
-// const mapDispatchToProps = (dispatch) => {
-//   return {
-//     fetchProducts: () => dispatch(fetchProducts()),
-//   };
-// };
 
 export default withRouter(connect(mapStateToProps)(ProductContainer));
