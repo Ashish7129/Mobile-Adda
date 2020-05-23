@@ -1,41 +1,167 @@
-import React, { useEffect } from "react";
+import React, { useEffect, Component } from "react";
+import axios from "axios";
 import { connect } from "react-redux";
-import { fetchProducts } from "../../redux";
+import {
+  fetchProductsFailure,
+  fetchProductsSuccess,
+  fetchProductsRequest,
+} from "../../redux";
+import { withRouter } from "react-router-dom";
+import queryString from "query-string";
 import CircularProgress from "@material-ui/core/CircularProgress";
-
+import ProductHeader from "./ProductHeader";
 import ProductCard from "./ProductCard";
+import Pagination from "./Pagination";
 
-function ProductContainer({ productData, fetchProducts }) {
-  useEffect(() => {
-    fetchProducts();
-  }, []);
-  return productData.loading ? (
-    <CircularProgress className="circular" />
-  ) : productData.error ? (
-    <h2>{productData.error}</h2>
-  ) : (
-    <div>
-      <div>
-        {productData &&
-          productData.products &&
-          productData.products.map((product) => (
+class ProductContainer extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      products: [],
+      loading: false,
+      totalProducts: null,
+    };
+    this.updateQueryString = this.updateQueryString.bind(this);
+  }
+
+  updateQueryString(newValues) {
+    let currentQS = queryString.parse(this.props.location.search);
+    let newQS = { ...currentQS, ...newValues };
+    this.props.history.push("/?" + queryString.stringify(newQS));
+  }
+
+  async fetchData() {
+    await axios
+      .get(
+        "https://my-json-server.typicode.com/Ashish7129/online-mobile-store/products"
+      )
+      .then((response) => {
+        // response.data is the products
+        this.state.products = response.data;
+        this.props.dispatch(fetchProductsSuccess(this.state.products));
+      })
+      .catch((error) => {
+        // error.message is the error message
+        this.props.dispatch(fetchProductsFailure(error.message));
+      });
+    this.setState({
+      products: this.props.productData.products,
+      loading: this.props.productData.loading,
+      totalProducts: this.props.productData.products.length,
+    });
+  }
+
+  componentDidMount() {
+    this.fetchData();
+  }
+
+  render() {
+    let { termToSearch, resultData } = this.SearchAndSort();
+    console.log(resultData);
+    if (this.state.loading) {
+      return <CircularProgress className="circular" />;
+    }
+    if (this.state.error) {
+      return <h2>{this.state.error}</h2>;
+    }
+    return (
+      <div style={{ height: "100%", display: "flex", flexDirection: "column" }}>
+        <ProductHeader
+          updateQueryString={this.updateQueryString}
+          totalProducts={resultData.length}
+          parsedQS={termToSearch}
+        />
+        <div>
+          {resultData.map((product) => (
             <ProductCard key={product.id} product={product} />
           ))}
+        </div>
+        <Pagination
+          updateQueryString={this.updateQueryString}
+          totalProducts={resultData.length}
+          parsedQS={termToSearch}
+        />
       </div>
-    </div>
-  );
-}
+    );
+  }
+  componentDidUpdate(prevProps, prevState, snapshot) {
+    let currentQS = queryString.parse(this.props.location.search);
+    let oldQS = queryString.parse(prevProps.location.search);
 
+    let areSameObjects = (a, b) => {
+      if (Object.keys(a).length !== Object.keys(b).length) return false;
+      for (let key in a) {
+        if (a[key] !== b[key]) return false;
+      }
+      return true;
+    };
+
+    // We will refetch products only when query string changes.
+    if (!areSameObjects(currentQS, oldQS)) {
+      this.SearchAndSort();
+    }
+  }
+
+  sortByPrice(data, sortval) {
+    if (sortval !== "lh" && sortval !== "hl") return data;
+    console.log("sort" + data);
+    let items = [...data];
+
+    if (sortval === "lh") {
+      items.sort((a, b) => a.price - b.price);
+    } else {
+      items.sort((a, b) => b.price - a.price);
+    }
+    console.log("aftersort" + data);
+    return items;
+  }
+
+  SearchAndSort() {
+    let termToSearch = queryString.parse(window.location.search);
+    console.log(termToSearch);
+    termToSearch.page = termToSearch.page || 1;
+    termToSearch.sortValue = termToSearch.sortValue || "lh";
+
+    let resultData = this.props.productData.products;
+    console.log(this.state.totalProducts);
+    console.log("Insearch :" + resultData);
+    if (termToSearch) {
+      if (termToSearch.term) {
+        resultData = this.state.products.filter((product) => {
+          if (
+            !product.name
+              .toLowerCase()
+              .includes(termToSearch.term.toLowerCase())
+          )
+            return false;
+          return true;
+        });
+      }
+
+      resultData = this.sortByPrice(resultData, termToSearch.sortValue);
+      console.log("AftSort :" + resultData);
+      if (termToSearch.page) {
+        resultData = resultData.slice(
+          (termToSearch.page - 1) * 2,
+          termToSearch.page * 2
+        );
+      }
+      console.log("Insearchaa :" + resultData);
+    }
+    console.log("Afyersearch :" + resultData);
+    return { termToSearch, resultData };
+  }
+}
 const mapStateToProps = (state) => {
   return {
     productData: state.products,
   };
 };
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    fetchProducts: () => dispatch(fetchProducts()),
-  };
-};
+// const mapDispatchToProps = (dispatch) => {
+//   return {
+//     fetchProducts: () => dispatch(fetchProducts()),
+//   };
+// };
 
-export default connect(mapStateToProps, mapDispatchToProps)(ProductContainer);
+export default withRouter(connect(mapStateToProps)(ProductContainer));

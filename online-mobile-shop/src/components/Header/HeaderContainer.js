@@ -9,7 +9,7 @@ import Button from "@material-ui/core/Button";
 import { withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 import { showCartDlg, toggleMenu, logout } from "../../redux";
-import Auth from "../../Auth";
+import Auth from "../../Utils/Auth";
 import Person from "@material-ui/icons/PersonOutline";
 import Avatar from "@material-ui/core/Avatar";
 import Menu from "@material-ui/core/Menu";
@@ -19,6 +19,7 @@ import LockIcon from "@material-ui/icons/Lock";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import SearchIcon from "@material-ui/icons/Search";
+import HomeIcon from "@material-ui/icons/Home";
 import InputAdornment from "@material-ui/core/InputAdornment";
 
 const mapStateToProps = (state) => {
@@ -60,6 +61,13 @@ class HeaderContainer extends Component {
       >
         <Toolbar>
           <div className="left-part">
+            <IconButton
+              onClick={() => {
+                this.props.history.push("/");
+              }}
+            >
+              <HomeIcon style={{ fontSize: 40, color: "#c1062f" }} />
+            </IconButton>
             {/* <IconButton
               onClick={() => {
                 this.props.dispatch(toggleMenu());
