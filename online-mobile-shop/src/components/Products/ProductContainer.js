@@ -52,7 +52,7 @@ class ProductContainer extends Component {
   }
 
   render() {
-    let { termToSearch, resultData } = this.SearchAndSort();
+    let { termToSearch, resultData, totalProductsCount } = this.SearchAndSort();
     console.log(resultData);
     if (this.state.loading) {
       return <CircularProgress className="circular" />;
@@ -74,7 +74,7 @@ class ProductContainer extends Component {
         </div>
         <Pagination
           updateQueryString={this.updateQueryString}
-          totalProducts={resultData.length}
+          totalProducts={totalProductsCount}
           parsedQS={termToSearch}
         />
       </div>
@@ -115,10 +115,11 @@ class ProductContainer extends Component {
     //console.log(termToSearch);
     termToSearch.page = termToSearch.page || 1;
     termToSearch.sortValue = termToSearch.sortValue || "lh";
-
+    termToSearch.productsPerPage = termToSearch.productsPerPage || 4;
     let resultData = this.props.productData.products;
+    let totalProductsCount;
     //console.log(this.state.totalProducts);
-    //console.log("Insearch :" + resultData);
+    //console.log(termToSearch);
     if (termToSearch) {
       if (termToSearch.term) {
         resultData = this.state.products.filter((product) => {
@@ -133,17 +134,18 @@ class ProductContainer extends Component {
       }
 
       resultData = this.sortByPrice(resultData, termToSearch.sortValue);
+      totalProductsCount = resultData.length;
       //console.log("After Sort :" + resultData);
       if (termToSearch.page) {
         resultData = resultData.slice(
-          (termToSearch.page - 1) * 4,
-          termToSearch.page * 4
+          (termToSearch.page - 1) * termToSearch.productsPerPage,
+          termToSearch.page * termToSearch.productsPerPage
         );
       }
       //console.log("Insearch after all computations :" + resultData);
     }
     //console.log("Aftersearch :" + resultData);
-    return { termToSearch, resultData };
+    return { termToSearch, resultData, totalProductsCount };
   }
 }
 const mapStateToProps = (state) => {

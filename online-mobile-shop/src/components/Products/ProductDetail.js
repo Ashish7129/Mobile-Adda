@@ -6,18 +6,13 @@ import { withRouter } from "react-router-dom";
 import Button from "@material-ui/core/Button";
 import AddShoppingCartIcon from "@material-ui/icons/AddShoppingCart";
 import TextField from "@material-ui/core/TextField";
+import Rating from "@material-ui/lab/Rating";
 
 const mapStateToProps = (state) => {
   return {
     productData: state.products,
   };
 };
-
-// const mapDispatchToProps = (dispatch) => {
-//   return {
-//     fetchProducts: () => dispatch(fetchProducts()),
-//   };
-// };
 
 class ProductDetailComponent extends Component {
   constructor(props) {
@@ -64,94 +59,72 @@ class ProductDetailComponent extends Component {
     console.log(this.state.product);
     return this.state.product.map((prod) => (
       <div key={prod.id}>
-        <div
-          style={{
-            marginBottom: 20,
-            marginTop: 10,
-            fontSize: 22,
-          }}
-        >
-          {prod.name}
-        </div>
-        <div style={{ display: "flex" }}>
-          <img
-            src={prod.imageUrls[0]}
-            alt=""
-            width={250}
-            height={250}
-            style={{
-              border: "1px solid lightgray",
-              borderRadius: "5px",
-              objectFit: "cover",
-            }}
-          />
+        <div style={{ display: "flex", marginTop: 100, marginBottom: 20 }}>
+          <div>
+            <img src={prod.imageUrls[1]} alt="" style={{ width: 200 }} />
+          </div>
           <div
             style={{
               flex: 1,
-              marginLeft: 20,
+              marginLeft: 400,
               display: "flex",
               flexDirection: "column",
             }}
           >
             <div
               style={{
-                fontSize: 16,
+                marginBottom: 0,
+                marginTop: 33,
+                fontSize: 51,
               }}
             >
-              Price: Rs {prod.price}
+              {prod.name}
             </div>
-            {/* {this.state.item.popular && (
-              <div style={{ fontSize: 14, marginTop: 5, color: "#228B22" }}>
-                (Popular product)
-              </div>
-            )} */}
-
-            <TextField
-              type="number"
-              value={this.state.quantity}
-              style={{ marginTop: 20, marginBottom: 10, width: 70 }}
-              label="Quantity"
-              inputProps={{ min: 1, max: 10, step: 1 }}
-              onChange={(e) => {
-                this.setState({ quantity: parseInt(e.target.value) });
-              }}
+            <Rating
+              name="read-only"
+              value={prod.rating}
+              readOnly
+              style={{ marginBottom: 20 }}
             />
-            <Button
-              style={{ width: 170, marginTop: 5 }}
-              color="primary"
-              variant="outlined"
-              onClick={() => {
-                this.props.dispatch(
-                  addProductInCart({
-                    ...prod,
-                    quantity: this.state.quantity,
-                  })
-                );
+            <div
+              style={{
+                fontSize: 30,
               }}
             >
-              Add to Cart <AddShoppingCartIcon style={{ marginLeft: 5 }} />
-            </Button>
+              Rs {prod.price}
+            </div>
+            <div style={{ flex: 1, flexDirection: "column" }}>
+              <TextField
+                type="number"
+                value={this.state.quantity}
+                style={{ marginTop: 20, marginBottom: 10, width: 70 }}
+                label="Quantity"
+                inputProps={{ min: 1, max: 10, step: 1 }}
+                onChange={(e) => {
+                  this.setState({ quantity: parseInt(e.target.value) });
+                }}
+              />
+              <Button
+                style={{ width: 170, marginTop: 29, marginLeft: 20 }}
+                color="secondary"
+                variant="outlined"
+                onClick={() => {
+                  this.props.dispatch(
+                    addProductInCart({
+                      ...prod,
+                      quantity: this.state.quantity,
+                    })
+                  );
+                }}
+              >
+                <AddShoppingCartIcon
+                  color="secondary"
+                  style={{ marginRight: 5 }}
+                />{" "}
+                Add to Cart
+              </Button>
+            </div>
           </div>
-        </div>
-
-        {/* Product description */}
-        <div
-          style={{
-            marginTop: 20,
-            marginBottom: 20,
-            fontSize: 22,
-          }}
-        >
-          Product Description
-        </div>
-        <div
-          style={{
-            maxHeight: 200,
-            fontSize: 13,
-            overflow: "auto",
-          }}
-        >
-          {prod.description ? prod.description : "Not available"}
         </div>
       </div>
     ));

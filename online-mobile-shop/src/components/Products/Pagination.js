@@ -9,9 +9,9 @@ import { withRouter } from "react-router-dom";
 
 const Pagination = (props) => {
   let { parsedQS } = props;
-  let itemsPerPage = parseInt(parsedQS.itemsPerPage) || 1;
+  let productsPerPage = parseInt(parsedQS.productsPerPage) || 4;
   let page = parseInt(parsedQS.page) || 1;
-  let totalPages = Math.ceil(props.totalProducts / itemsPerPage);
+  let totalPages = Math.ceil(props.totalProducts / productsPerPage);
 
   if (!props.totalProducts) return null;
 
