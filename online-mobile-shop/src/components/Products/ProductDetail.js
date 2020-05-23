@@ -1,12 +1,18 @@
 import React, { Component, useEffect } from "react";
 import CircularProgress from "@material-ui/core/CircularProgress";
 import { connect } from "react-redux";
-import { fetchProducts, addProductInCart } from "../../redux";
+import {
+  fetchProducts,
+  addProductInCart,
+  fetchProductsFailure,
+  fetchProductsSuccess,
+} from "../../redux";
 import { withRouter } from "react-router-dom";
 import Button from "@material-ui/core/Button";
 import AddShoppingCartIcon from "@material-ui/icons/AddShoppingCart";
 import TextField from "@material-ui/core/TextField";
 import Rating from "@material-ui/lab/Rating";
+import axios from "axios";
 
 const mapStateToProps = (state) => {
   return {
@@ -18,19 +24,38 @@ class ProductDetailComponent extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      loading: false,
-      product: [],
+      loading: true,
+      product: null,
       quantity: 1,
       allProducts: [],
     };
   }
 
+  async fetchData() {
+    await axios
+      .get(
+        "https://my-json-server.typicode.com/Ashish7129/online-mobile-store/products"
+      )
+      .then((response) => {
+        // response.data is the products
+        this.state.allProducts = response.data;
+        this.props.dispatch(fetchProductsSuccess(this.state.allProducts));
+      })
+      .catch((error) => {
+        // error.message is the error message
+        this.props.dispatch(fetchProductsFailure(error.message));
+      });
+    this.setState({
+      allProducts: this.props.productData.products,
+      loading: this.props.productData.loading,
+    });
+  }
+
   componentDidUpdate(prevProps) {
     if (this.props.match.params.id !== prevProps.match.params.id) {
+      this.fetchData();
       this.setState({
-        allProducts: this.props.productData.products,
-        loading: this.props.productData.loading,
-        product: this.props.productData.products.filter(
+        product: this.state.allProducts.filter(
           (x) => x.id == this.props.match.params.id
         ),
       });
@@ -38,11 +63,9 @@ class ProductDetailComponent extends Component {
   }
 
   componentDidMount() {
-    this.props.dispatch(fetchProducts());
+    this.fetchData();
     this.setState({
-      allProducts: this.props.productData.products,
-      loading: this.props.productData.loading,
-      product: this.props.productData.products.filter(
+      product: this.state.allProducts.filter(
         (x) => x.id == this.props.match.params.id
       ),
     });
@@ -56,6 +79,9 @@ class ProductDetailComponent extends Component {
       return null;
     }
     console.log("Products :" + this.state.allProducts);
+    this.state.product = this.state.allProducts.filter(
+      (x) => x.id == this.props.match.params.id
+    );
     console.log(this.state.product);
     return this.state.product.map((prod) => (
       <div key={prod.id}>

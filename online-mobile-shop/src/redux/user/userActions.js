@@ -11,3 +11,7 @@ export const setLoggedInUser = (user) => ({
 export const logout = () => ({
   type: CONSTANTS.LOGOUT,
 });
+export const showConfirmation = (status) => ({
+  type: CONSTANTS.SHOW_ORDER_CONFIRMATION,
+  payload: status,
+});

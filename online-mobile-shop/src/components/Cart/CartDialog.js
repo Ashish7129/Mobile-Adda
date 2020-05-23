@@ -52,10 +52,11 @@ class ConnectedCartDialog extends Component {
             <Table>
               <TableHead>
                 <TableRow>
+                  <TableCell></TableCell>
                   <TableCell>Item name</TableCell>
                   <TableCell>Price</TableCell>
                   <TableCell>Quantity</TableCell>
-                  <TableCell>Action</TableCell>
+                  <TableCell></TableCell>
                 </TableRow>
               </TableHead>
               <TableBody>

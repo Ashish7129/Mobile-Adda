@@ -25,7 +25,7 @@ class ProductCard extends Component {
         }}
       >
         <CardActionArea
-          style={{ display: "flex" }}
+          style={{ display: "flex", height: 200 }}
           onClick={() => {
             this.props.history.push("/product/" + this.props.product.id);
           }}

@@ -3,6 +3,7 @@ import * as CONSTANTS from "./userConstants";
 const initialState = {
   checkedOutItems: [],
   loggedInUser: null,
+  showOrderConfirmation: false,
 };
 
 const userReducer = (state = initialState, action) => {
@@ -13,6 +14,8 @@ const userReducer = (state = initialState, action) => {
       return { ...state, loggedInUser: null, checkedOutItems: [] };
     case CONSTANTS.SET_CHECKEDOUT_ITEMS:
       return { ...state, checkedOutItems: action.payload };
+    case CONSTANTS.SHOW_ORDER_CONFIRMATION:
+      return { ...state, showOrderConfirmation: action.payload };
     default:
       return state;
   }

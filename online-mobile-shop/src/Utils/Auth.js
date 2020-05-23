@@ -4,7 +4,6 @@ const Auth = {
 
   authenticate(name, pass, cb) {
     this._isAuthenticated = true;
-    localStorage.setItem("authUser", name);
     setTimeout(
       () =>
         cb({
@@ -16,7 +15,6 @@ const Auth = {
 
   signout(cb) {
     this._isAuthenticated = false;
-    localStorage.removeItem("authUser");
     setTimeout(cb, 100);
   },
 };

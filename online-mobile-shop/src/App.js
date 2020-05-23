@@ -7,7 +7,9 @@ import Footer from "./components/Footer/FooterContainer";
 import Login from "./components/Login/Login";
 import ProductDetail from "./components/Products/ProductDetail";
 import CartDialog from "./components/Cart/CartDialog";
-import Order from "./components/Cart/Order";
+import Order from "./components/Order/Order";
+import AuthGuard from "./components/Order/AuthGuardCheckout";
+import OrderConfirmation from "./components/Order/OrderConfirmation";
 
 function App() {
   return (
@@ -16,11 +18,12 @@ function App() {
       <div className="app-body">
         <div className="container">
           <CartDialog />
+          <OrderConfirmation />
           <Switch>
             <Route path="/" exact component={ProductContainer} />
             <Route path="/product/:id" component={ProductDetail} />
             <Route path="/login" component={Login} />
-            <Route path="/order" component={Order} />
+            <AuthGuard path="/order" component={Order} />
             <Route
               component={() => (
                 <div style={{ padding: 20 }}>Page not found</div>

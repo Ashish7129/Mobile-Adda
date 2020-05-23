@@ -14,7 +14,7 @@ class ProductContainer extends Component {
     super(props);
     this.state = {
       products: [],
-      loading: false,
+      loading: true,
       totalProducts: null,
     };
     this.updateQueryString = this.updateQueryString.bind(this);
@@ -59,6 +59,9 @@ class ProductContainer extends Component {
     }
     if (this.state.error) {
       return <h2>{this.state.error}</h2>;
+    }
+    if (resultData.length == 0) {
+      return <h2>Not Products Found</h2>;
     }
     return (
       <div style={{ height: "100%", display: "flex", flexDirection: "column" }}>

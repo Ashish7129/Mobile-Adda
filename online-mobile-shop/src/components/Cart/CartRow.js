@@ -16,6 +16,9 @@ const CartRow = (props) => {
   return (
     <TableRow>
       <TableCell>
+        <img src={item.imageUrls[2]}></img>
+      </TableCell>
+      <TableCell>
         <Link to={`/product/${item.id}`}>
           <div
             onClick={() => {

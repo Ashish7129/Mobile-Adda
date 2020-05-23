@@ -7,7 +7,8 @@ import TableBody from "@material-ui/core/TableBody";
 import TableCell from "@material-ui/core/TableCell";
 import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
-import { setCheckedOutItems, deleteCart } from "../../redux";
+import { setCheckedOutItems, deleteCart, showConfirmation } from "../../redux";
+import OrderConfirmation from "./OrderConfirmation";
 
 const mapStateToProps = (state) => {
   return {
@@ -53,14 +54,16 @@ class ConnectedOrder extends Component {
             fontSize: 22,
           }}
         >
-          Total price: {totalPrice} $
+          Total price: Rs. {totalPrice}
         </div>
         <Button
           color="primary"
           variant="outlined"
           disabled={totalPrice === 0}
           onClick={() => {
-            console.log("purchased");
+            this.props.dispatch(setCheckedOutItems([]));
+            this.props.dispatch(deleteCart([]));
+            this.props.dispatch(showConfirmation(true));
           }}
           style={{ margin: 5, marginTop: 30 }}
         >
