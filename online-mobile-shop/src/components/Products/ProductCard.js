@@ -41,7 +41,7 @@ class ProductCard extends Component {
               style={{
                 marginLeft: 5,
                 fontWeight: "bold",
-                fontSize: 30,
+                fontSize: 21,
                 whiteSpace: "nowrap",
                 overflow: "hidden",
                 textOverflow: "ellipsis",
