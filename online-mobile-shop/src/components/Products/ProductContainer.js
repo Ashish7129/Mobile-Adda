@@ -136,8 +136,8 @@ class ProductContainer extends Component {
       //console.log("After Sort :" + resultData);
       if (termToSearch.page) {
         resultData = resultData.slice(
-          (termToSearch.page - 1) * 2,
-          termToSearch.page * 2
+          (termToSearch.page - 1) * 4,
+          termToSearch.page * 4
         );
       }
       //console.log("Insearch after all computations :" + resultData);
