@@ -1,54 +1,6 @@
 {
   "products": [
     {
-      "id": 1,
-      "name": "Apple iPhone 11",
-      "category": "Apple",
-      "price": 64900,
-      "rating": 4.7,
-      "imageUrls": [
-        "https://www.91-img.com/pictures/132396-v8-apple-iphone-xi-mobile-phone-medium-1.jpg",
-        "https://www.91-img.com/gallery_images_uploads/2/1/2157cbc5d84e95ebab0caddf3391dd9e8ad1e5ec.jpg",
-        "https://www.91-img.com/pictures/132396-v8-apple-iphone-xi-mobile-phone-thumb-1.jpg"
-      ]
-    },
-    {
-      "id": 2,
-      "name": "Apple iPhone XR",
-      "category": "Apple",
-      "price": 48100,
-      "rating": 4.5,
-      "imageUrls": [
-        "https://www.91-img.com/pictures/129877-v7-apple-iphone-xr-mobile-phone-medium-1.jpg",
-        "https://www.91-img.com/gallery_images_uploads/5/1/514372c826852430d46a43eb68e3cb61fd38be4e.jpg",
-        "https://www.91-img.com/pictures/129877-v7-apple-iphone-xr-mobile-phone-thumb-1.jpg"
-      ]
-    },
-    {
-      "id": 3,
-      "name": "Apple iPhone 7",
-      "category": "Apple",
-      "price": 28500,
-      "rating": 4.2,
-      "imageUrls": [
-        "https://www.91-img.com/pictures/97744-v1-apple-iphone-7-mobile-phone-medium-1.jpg",
-        "https://www.91-img.com/gallery_images_uploads/3/b/3bd4f074bd21e3c4f44302f2785d29a512379a8a.jpg",
-        "https://www.91-img.com/pictures/97744-v1-apple-iphone-7-mobile-phone-thumb-1.jpg"
-      ]
-    },
-    {
-      "id": 4,
-      "name": "Xiaomi Redmi Note 9 Pro",
-      "category": "Xiaomi",
-      "price": 16499,
-      "rating": 4.3,
-      "imageUrls": [
-        "https://www.91-img.com/pictures/137046-v6-xiaomi-redmi-note-9-pro-mobile-phone-medium-1.jpg",
-        "https://www.91-img.com/gallery_images_uploads/9/a/9accbc7b6b36f6bab10a84cc487faee993778821.jpg",
-        "https://www.91-img.com/pictures/137046-v6-xiaomi-redmi-note-9-pro-mobile-phone-thumb-1.jpg"
-      ]
-    },
-    {
       "id": 5,
       "name": "Xiaomi Redmi Note 8 Pro",
       "category": "Xiaomi",
