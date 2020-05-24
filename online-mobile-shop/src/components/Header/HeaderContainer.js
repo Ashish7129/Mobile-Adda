@@ -29,12 +29,12 @@ const mapStateToProps = (state) => {
 class HeaderContainer extends Component {
   state = {
     searchTerm: "",
-    mainEl: null,
+    anchorEl: null,
     isLogged: localStorage.getItem("authUser"),
   };
 
   render() {
-    let { mainEl } = this.state;
+    let { anchorEl } = this.state;
 
     return (
       <AppBar
@@ -97,7 +97,7 @@ class HeaderContainer extends Component {
             ) : (
               <IconButton
                 onClick={(event) => {
-                  this.setState({ mainEl: event.currentTarget });
+                  this.setState({ anchorEl: event.currentTarget });
                 }}
               >
                 <Person style={{ fontSize: 40, color: "#c1062f" }} />
@@ -120,15 +120,15 @@ class HeaderContainer extends Component {
             </IconButton>
 
             <Menu
-              mainEl={mainEl}
-              open={Boolean(mainEl)}
+              anchorEl={anchorEl}
+              open={Boolean(anchorEl)}
               onClose={() => {
-                this.setState({ mainEl: null });
+                this.setState({ anchorEl: null });
               }}
             >
               <MenuItem
                 onClick={() => {
-                  this.setState({ mainEl: null });
+                  this.setState({ anchorEl: null });
                   this.props.dispatch(setCheckedOutItems(this.props.items));
                   this.props.history.push("/order");
                 }}
@@ -141,7 +141,7 @@ class HeaderContainer extends Component {
                     this.props.dispatch(logout());
                     this.props.history.push("/");
                   });
-                  this.setState({ mainEl: null });
+                  this.setState({ anchorEl: null });
                 }}
               >
                 Logout
