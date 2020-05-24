@@ -1,4 +1,4 @@
-import React, { useEffect, Component } from "react";
+import React, { Component } from "react";
 import axios from "axios";
 import { connect } from "react-redux";
 import { fetchProductsFailure, fetchProductsSuccess } from "../../redux";
@@ -53,25 +53,32 @@ class ProductContainer extends Component {
 
   render() {
     let { termToSearch, resultData, totalProductsCount } = this.SearchAndSort();
-    console.log(resultData);
+    //console.log(resultData);
     if (this.state.loading) {
       return <CircularProgress className="circular" />;
     }
     if (this.state.error) {
       return <h2>{this.state.error}</h2>;
     }
-    if (resultData.length == 0) {
+    if (resultData.length === 0) {
       return <h2>Not Products Found</h2>;
     }
     return (
-      <div style={{ height: "100%", display: "flex", flexDirection: "column" }}>
+      <div
+        style={{
+          height: "100%",
+          display: "flex",
+          flexDirection: "column",
+          backgroundColor: "#faebd7",
+        }}
+      >
         <ProductHeader
           updateQueryString={this.updateQueryString}
           totalProducts={resultData.length}
           parsedQS={termToSearch}
         />
 
-        <div style={{ marginTop: 100, marginBottom: 100 }}>
+        <div style={{ marginTop: 40, marginBottom: 100 }}>
           {resultData.map((product) => (
             <ProductCard key={product.id} product={product} />
           ))}

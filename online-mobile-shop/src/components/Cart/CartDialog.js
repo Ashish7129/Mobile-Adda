@@ -32,7 +32,12 @@ class ConnectedCartDialog extends Component {
             this.props.dispatch(showCartDlg(false));
           }}
         >
-          <AppBar position="static" style={{ backgroundColor: "#3863aa" }}>
+          <AppBar
+            position="static"
+            style={{
+              background: "linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)",
+            }}
+          >
             <Toolbar>
               <ShoppingCartIcon
                 fontSize="large"
@@ -53,9 +58,9 @@ class ConnectedCartDialog extends Component {
               <TableHead>
                 <TableRow>
                   <TableCell></TableCell>
-                  <TableCell>Item name</TableCell>
-                  <TableCell>Price</TableCell>
+                  <TableCell>Product(Mobile)</TableCell>
                   <TableCell>Quantity</TableCell>
+                  <TableCell>Price</TableCell>
                   <TableCell></TableCell>
                 </TableRow>
               </TableHead>
@@ -67,7 +72,7 @@ class ConnectedCartDialog extends Component {
             </Table>
           </div>
 
-          <div style={{ display: "flex", padding: 20, alignItems: "center" }}>
+          <div style={{ display: "flex", padding: 20, alignSelf: "flex-end" }}>
             <div
               style={{
                 flex: 1,
@@ -76,9 +81,28 @@ class ConnectedCartDialog extends Component {
               {" "}
               Total Price: Rs {totalPrice}
             </div>
+          </div>
+          <div style={{ display: "flex", padding: 20, alignSelf: "flex-end" }}>
             <Button
-              variant="outlined"
-              color="primary"
+              style={{
+                background: "linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)",
+                color: "white",
+                fontWeight: 200,
+                marginRight: 10,
+              }}
+              onClick={() => {
+                this.props.dispatch(showCartDlg(false));
+                this.props.history.push("/");
+              }}
+            >
+              Continue Shopping
+            </Button>
+            <Button
+              style={{
+                background: "linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)",
+                color: "white",
+                fontWeight: 200,
+              }}
               disabled={totalPrice === 0}
               onClick={() => {
                 this.props.dispatch(showCartDlg(false));

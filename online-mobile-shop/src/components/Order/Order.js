@@ -29,7 +29,7 @@ class ConnectedOrder extends Component {
           <TableHead>
             <TableRow>
               <TableCell></TableCell>
-              <TableCell>Item name</TableCell>
+              <TableCell>Product(Mobile)</TableCell>
               <TableCell>Price</TableCell>
               <TableCell>Quantity</TableCell>
             </TableRow>
@@ -61,29 +61,37 @@ class ConnectedOrder extends Component {
           Total price: Rs. {totalPrice}
         </div>
         <Button
-          color="primary"
-          variant="outlined"
+          style={{
+            background: "linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)",
+            color: "white",
+            fontWeight: 200,
+            margin: 5,
+            marginTop: 30,
+          }}
           disabled={totalPrice === 0}
           onClick={() => {
             this.props.dispatch(setCheckedOutItems([]));
             this.props.dispatch(deleteCart([]));
             this.props.dispatch(showConfirmation(true));
           }}
-          style={{ margin: 5, marginTop: 30 }}
         >
           Purchase
         </Button>
         <Button
-          color="secondary"
-          variant="outlined"
+          style={{
+            background: "linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)",
+            color: "white",
+            fontWeight: 200,
+            margin: 5,
+            marginTop: 30,
+          }}
           disabled={totalPrice === 0}
           onClick={() => {
             this.props.dispatch(setCheckedOutItems([]));
             this.props.dispatch(deleteCart([]));
           }}
-          style={{ margin: 5, marginTop: 30 }}
         >
-          Discard
+          Delete Cart
         </Button>
       </div>
     );

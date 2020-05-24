@@ -1,10 +1,6 @@
 import React, { Component } from "react";
-import Button from "@material-ui/core/Button";
-import Tooltip from "@material-ui/core/Tooltip";
 import MenuItem from "@material-ui/core/MenuItem";
 import Select from "@material-ui/core/Select";
-import FormControlLabel from "@material-ui/core/FormControlLabel";
-import Checkbox from "@material-ui/core/Checkbox";
 import { withRouter } from "react-router-dom";
 
 class ProductsHeader extends Component {
@@ -12,10 +8,10 @@ class ProductsHeader extends Component {
     let { parsedQS, updateQueryString, totalProducts } = this.props;
     let sortValue = parsedQS.sortValue || "lh";
     let keyword = parsedQS.term;
-    
+
     let subtitle = (
       <React.Fragment>
-        <span style={{ fontSize: 12, color: "gray", marginTop: 5 }}>
+        <span style={{ fontSize: 20, color: "gray", marginTop: 5 }}>
           {totalProducts +
             " result" +
             (totalProducts === 1 ? " " : "s ") +
@@ -25,7 +21,7 @@ class ProductsHeader extends Component {
           <span
             style={{
               fontWeight: "bold",
-              fontSize: 12,
+              fontSize: 20,
               color: "gray",
               marginTop: 5,
             }}
@@ -38,17 +34,34 @@ class ProductsHeader extends Component {
 
     return (
       <div>
-        <div style={{ padding: 10, display: "flex", alignItems: "center" }}>
-          <div style={{ flex: 1, fontSize: 24 }}>{subtitle}</div>
-
+        <div
+          style={{
+            padding: 10,
+            display: "flex",
+            alignItems: "center",
+            backgroundColor: "#fe875e61",
+          }}
+        >
+          <div style={{ flex: 1 }}>{subtitle}</div>
+          <span
+            style={{
+              fontSize: 18,
+              fontWeight: "bold",
+              marginRight: 13,
+              color: "#696764",
+            }}
+          >
+            SORT BY{" "}
+          </span>
           <Select
             value={sortValue}
             onChange={(e) => {
               updateQueryString({ sortValue: e.target.value });
             }}
           >
-            <MenuItem value={"lh"}>Sort by price: low to high</MenuItem>
-            <MenuItem value={"hl"}>Sort by price: high to low</MenuItem>
+            {" "}
+            <MenuItem value={"lh"}> Low to High Price</MenuItem>
+            <MenuItem value={"hl"}> High to Low Price</MenuItem>
           </Select>
         </div>
       </div>

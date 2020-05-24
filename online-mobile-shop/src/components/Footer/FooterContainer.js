@@ -8,8 +8,8 @@ function Copyright() {
   return (
     <Typography variant="body1" color="textSecondary" align="center">
       {"Copyright © "}
-      <Link color="inherit" href="https://material-ui.com/">
-        Your Website
+      <Link color="inherit" href="https://github.com/Ashish7129">
+        Mobile Adda
       </Link>{" "}
       {new Date().getFullYear()}
       {"."}
@@ -21,7 +21,6 @@ class FooterContainer extends Component {
     return (
       <div
         style={{
-          height: 100,
           padding: 30,
           backgroundColor: " rgb(236, 186, 161)",
         }}

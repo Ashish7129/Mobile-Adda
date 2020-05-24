@@ -1,6 +1,4 @@
 import React, { Component } from "react";
-import IconButton from "@material-ui/core/IconButton";
-import AddCircle from "@material-ui/icons/AddCircle";
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
 import { addProductInCart } from "../../redux";
@@ -8,19 +6,18 @@ import Card from "@material-ui/core/Card";
 import CardActionArea from "@material-ui/core/CardActionArea";
 import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
-import CardMedia from "@material-ui/core/CardMedia";
 import Tooltip from "@material-ui/core/Tooltip";
 import Button from "@material-ui/core/Button";
 import Rating from "@material-ui/lab/Rating";
-import Paper from "@material-ui/core/Paper";
 
 class ProductCard extends Component {
   render() {
     return (
       <Card
         style={{
-          width: 400,
-          margin: 10,
+          width: 440,
+          marginLeft: 23,
+          marginBottom: 10,
           display: "inline-block",
         }}
       >
@@ -67,7 +64,13 @@ class ProductCard extends Component {
             variant="outlined"
             color="secondary"
             size="large"
-            style={{ marginRight: 60 }}
+            style={{
+              marginRight: 60,
+              marginLeft: 30,
+              background: "linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)",
+              color: "white",
+              fontWeight: 200,
+            }}
             onClick={() => {
               this.props.history.push("/product/" + this.props.product.id);
             }}
@@ -80,6 +83,11 @@ class ProductCard extends Component {
               variant="outlined"
               color="secondary"
               size="large"
+              style={{
+                background: "linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)",
+                color: "white",
+                fontWeight: 200,
+              }}
               onClick={(e) => {
                 e.stopPropagation();
                 this.props.dispatch(

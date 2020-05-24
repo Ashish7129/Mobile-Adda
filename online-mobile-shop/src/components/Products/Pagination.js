@@ -21,27 +21,24 @@ const Pagination = (props) => {
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
+        color: "#676563",
       }}
     >
       <IconButton
-        size="small"
-        color="primary"
         disabled={page === 1}
         onClick={() => {
           props.updateQueryString({ page: 1 });
         }}
-        style={{ marginRight: 10 }}
+        style={{ marginRight: 10, fontSize: 30 }}
       >
         <First />
       </IconButton>
       <IconButton
-        size="small"
-        color="primary"
         disabled={page === 1}
         onClick={() => {
           props.updateQueryString({ page: page - 1 });
         }}
-        style={{ marginRight: 10 }}
+        style={{ marginRight: 10, fontSize: 30 }}
       >
         <Left />
       </IconButton>
@@ -49,24 +46,20 @@ const Pagination = (props) => {
         Page {page} of {totalPages}
       </Typography>
       <IconButton
-        size="small"
-        color="primary"
         disabled={page >= totalPages}
         onClick={() => {
           props.updateQueryString({ page: page + 1 });
         }}
-        style={{ marginLeft: 10, marginRight: 10 }}
+        style={{ marginLeft: 10, marginRight: 10, fontSize: 30 }}
       >
         <Right />
       </IconButton>
       <IconButton
-        size="small"
-        color="primary"
         disabled={page >= totalPages}
         onClick={() => {
           props.updateQueryString({ page: totalPages });
         }}
-        style={{ marginRight: 10 }}
+        style={{ marginRight: 10, fontSize: 30 }}
       >
         <Last />
       </IconButton>

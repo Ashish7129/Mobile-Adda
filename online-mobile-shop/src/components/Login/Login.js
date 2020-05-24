@@ -3,11 +3,9 @@ import { withRouter, Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 import Auth from "../../Utils/Auth";
 import TextField from "@material-ui/core/TextField";
-import Button from "@material-ui/core/Button";
 import { setLoggedInUser } from "../../redux";
-import Avatar from "@material-ui/core/Avatar";
 import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
-import LoginButton from "./LoginStyles";
+import LoginButton from "../../Utils/ButtonStyles";
 
 class ConnectedLogin extends Component {
   state = {

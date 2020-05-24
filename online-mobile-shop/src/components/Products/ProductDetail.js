@@ -1,8 +1,7 @@
-import React, { Component, useEffect } from "react";
+import React, { Component } from "react";
 import CircularProgress from "@material-ui/core/CircularProgress";
 import { connect } from "react-redux";
 import {
-  fetchProducts,
   addProductInCart,
   fetchProductsFailure,
   fetchProductsSuccess,
@@ -78,11 +77,11 @@ class ProductDetailComponent extends Component {
     if (!this.state.product) {
       return null;
     }
-    console.log("Products :" + this.state.allProducts);
+    //console.log("Products :" + this.state.allProducts);
     this.state.product = this.state.allProducts.filter(
       (x) => x.id == this.props.match.params.id
     );
-    console.log(this.state.product);
+    //console.log(this.state.product);
     return this.state.product.map((prod) => (
       <div key={prod.id}>
         <div style={{ display: "flex", marginTop: 100, marginBottom: 20 }}>
@@ -90,9 +89,9 @@ class ProductDetailComponent extends Component {
             <img src={prod.imageUrls[1]} alt="" style={{ width: 200 }} />
           </div>
           <div
+            className="productDetail"
             style={{
               flex: 1,
-              marginLeft: 400,
               display: "flex",
               flexDirection: "column",
             }}
@@ -131,9 +130,13 @@ class ProductDetailComponent extends Component {
                 }}
               />
               <Button
-                style={{ width: 170, marginTop: 29, marginLeft: 20 }}
-                color="secondary"
-                variant="outlined"
+                style={{
+                  width: 170,
+                  marginTop: 29,
+                  marginLeft: 20,
+                  background:
+                    "linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)",
+                }}
                 onClick={() => {
                   this.props.dispatch(
                     addProductInCart({

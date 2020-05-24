@@ -12,5 +12,20 @@ code {
 
 .container {
   margin: 0 auto;
-  width: 50%;
+  width: 54%;
+}
+
+@media screen and (max-width: 680px) {
+  .container {
+    margin: 0 auto;
+    width: 80%;
+  }
+  .productDetail {
+    margin-left: 200px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .productDetail {
+    margin-left: 400px;
+  }
 }

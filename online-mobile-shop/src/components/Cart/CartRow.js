@@ -19,7 +19,7 @@ const CartRow = (props) => {
         <img src={item.imageUrls[2]}></img>
       </TableCell>
       <TableCell>
-        <Link to={`/product/${item.id}`}>
+        <Link to={`/product/${item.id}`} style={{ textDecoration: "none" }}>
           <div
             onClick={() => {
               props.dispatch(showCartDlg(false));
@@ -29,7 +29,6 @@ const CartRow = (props) => {
           </div>
         </Link>
       </TableCell>
-      <TableCell>{item.price}</TableCell>
       <TableCell>
         <TextField
           type="number"
@@ -47,6 +46,7 @@ const CartRow = (props) => {
           }}
         />
       </TableCell>
+      <TableCell>{item.price}</TableCell>
       <TableCell>
         <Button
           color="secondary"

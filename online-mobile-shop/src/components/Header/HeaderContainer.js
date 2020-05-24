@@ -6,7 +6,7 @@ import Badge from "@material-ui/core/Badge";
 import TextField from "@material-ui/core/TextField";
 import { withRouter } from "react-router-dom";
 import { connect } from "react-redux";
-import { showCartDlg, logout } from "../../redux";
+import { showCartDlg, logout, setCheckedOutItems } from "../../redux";
 import Auth from "../../Utils/Auth";
 import Person from "@material-ui/icons/PersonOutline";
 import Menu from "@material-ui/core/Menu";
@@ -22,6 +22,7 @@ const mapStateToProps = (state) => {
   return {
     nrOfItemsInCard: state.cart.cartItems.length,
     loggedInUser: state.user.loggedInUser,
+    items: state.cart.cartItems,
   };
 };
 
@@ -127,6 +128,7 @@ class HeaderContainer extends Component {
               <MenuItem
                 onClick={() => {
                   this.setState({ anchorEl: null });
+                  this.props.dispatch(setCheckedOutItems(this.props.items));
                   this.props.history.push("/order");
                 }}
               >
