@@ -21,10 +21,34 @@ class ConnectedOrder extends Component {
     let totalPrice = this.props.checkedOutItems.reduce((accumulator, item) => {
       return accumulator + item.price * item.quantity;
     }, 0);
-
+    if (this.props.checkedOutItems.length == 0) {
+      return (
+        <div style={{ padding: 10 }}>
+          <div style={{ fontSize: 24, marginTop: 10, marginBottom: 10 }}>
+            No Products to Checkout
+          </div>
+          <Button
+            style={{
+              background: "linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)",
+              color: "white",
+              fontWeight: 200,
+              margin: 5,
+              marginTop: 30,
+            }}
+            onClick={() => {
+              this.props.history.push("/");
+            }}
+          >
+            Continue Shopping
+          </Button>
+        </div>
+      );
+    }
     return (
       <div style={{ padding: 10 }}>
-        <div style={{ fontSize: 24, marginTop: 10 }}>Order summary</div>
+        <div style={{ fontSize: 24, marginTop: 10, marginBottom: 10 }}>
+          Checkout Summary
+        </div>
         <Table>
           <TableHead
             style={{
