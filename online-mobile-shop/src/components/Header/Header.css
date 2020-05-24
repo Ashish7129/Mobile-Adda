@@ -1,12 +1,18 @@
 .left-part {
-    display: flex;
-    flex: 1;
-    align-items: center;
+  display: flex;
+  flex: 1;
+  align-items: center;
 }
 
 .right-part {
-    display: flex;
-    width: 550px;
-    align-items: center;
-    justify-content: flex-end;
+  display: flex;
+  width: 550px;
+  align-items: center;
+  justify-content: flex-end;
+}
+.logo {
+  background-image: url(../../Utils/logo_v2.png);
+  background-size: 80px;
+  width: 80px;
+  height: 80px;
 }

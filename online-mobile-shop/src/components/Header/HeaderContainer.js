@@ -29,12 +29,12 @@ const mapStateToProps = (state) => {
 class HeaderContainer extends Component {
   state = {
     searchTerm: "",
-    anchorEl: null,
+    mainEl: null,
     isLogged: localStorage.getItem("authUser"),
   };
 
   render() {
-    let { anchorEl } = this.state;
+    let { mainEl } = this.state;
 
     return (
       <AppBar
@@ -46,6 +46,9 @@ class HeaderContainer extends Component {
       >
         <Toolbar>
           <div className="left-part">
+            <div class="logo"></div>
+          </div>
+          <div className="right-part">
             <IconButton
               onClick={() => {
                 this.props.history.push("/");
@@ -53,8 +56,6 @@ class HeaderContainer extends Component {
             >
               <HomeIcon style={{ fontSize: 40, color: "#c1062f" }} />
             </IconButton>
-          </div>
-          <div className="right-part">
             <TextField
               label="Search Mobiles"
               value={this.state.searchTerm}
@@ -96,7 +97,7 @@ class HeaderContainer extends Component {
             ) : (
               <IconButton
                 onClick={(event) => {
-                  this.setState({ anchorEl: event.currentTarget });
+                  this.setState({ mainEl: event.currentTarget });
                 }}
               >
                 <Person style={{ fontSize: 40, color: "#c1062f" }} />
@@ -119,15 +120,15 @@ class HeaderContainer extends Component {
             </IconButton>
 
             <Menu
-              anchorEl={anchorEl}
-              open={Boolean(anchorEl)}
+              mainEl={mainEl}
+              open={Boolean(mainEl)}
               onClose={() => {
-                this.setState({ anchorEl: null });
+                this.setState({ mainEl: null });
               }}
             >
               <MenuItem
                 onClick={() => {
-                  this.setState({ anchorEl: null });
+                  this.setState({ mainEl: null });
                   this.props.dispatch(setCheckedOutItems(this.props.items));
                   this.props.history.push("/order");
                 }}
@@ -140,7 +141,7 @@ class HeaderContainer extends Component {
                     this.props.dispatch(logout());
                     this.props.history.push("/");
                   });
-                  this.setState({ anchorEl: null });
+                  this.setState({ mainEl: null });
                 }}
               >
                 Logout

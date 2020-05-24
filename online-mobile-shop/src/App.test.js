@@ -1,9 +1,21 @@
-import React from 'react';
-import { render } from '@testing-library/react';
-import App from './App';
+import * as React from "react";
+import { mount } from "enzyme";
+import App from "./App";
+import Enzyme, { shallow } from "enzyme";
+import Adapter from "enzyme-adapter-react-15";
 
-test('renders learn react link', () => {
-  const { getByText } = render(<App />);
-  const linkElement = getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+Enzyme.configure({ adapter: new Adapter() });
+
+describe("App", () => {
+  describe("component", () => {
+    let element;
+
+    beforeEach(() => {
+      element = <App />;
+    });
+    it("renders as expected", () => {
+      const component = mount(element);
+      expect(component).toMatchSnapshot();
+    });
+  });
 });
