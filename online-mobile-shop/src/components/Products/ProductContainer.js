@@ -126,7 +126,7 @@ class ProductContainer extends Component {
     //console.log(termToSearch);
     termToSearch.page = termToSearch.page || 1;
     termToSearch.sortValue = termToSearch.sortValue || "lh";
-    termToSearch.productsPerPage = termToSearch.productsPerPage || 8;
+    termToSearch.productsPerPage = termToSearch.productsPerPage || 10;
     let resultData = this.props.productData.products;
     let totalProductsCount;
     //console.log(this.state.totalProducts);

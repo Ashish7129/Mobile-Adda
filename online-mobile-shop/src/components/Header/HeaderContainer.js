@@ -46,7 +46,7 @@ class HeaderContainer extends Component {
       >
         <Toolbar>
           <div className="left-part">
-            <div class="logo"></div>
+            <a href="/" class="logo"></a>
           </div>
           <div className="right-part">
             <IconButton

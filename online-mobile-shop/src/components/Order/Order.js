@@ -26,7 +26,11 @@ class ConnectedOrder extends Component {
       <div style={{ padding: 10 }}>
         <div style={{ fontSize: 24, marginTop: 10 }}>Order summary</div>
         <Table>
-          <TableHead>
+          <TableHead
+            style={{
+              background: "linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)",
+            }}
+          >
             <TableRow>
               <TableCell></TableCell>
               <TableCell>Product(Mobile)</TableCell>
@@ -75,7 +79,7 @@ class ConnectedOrder extends Component {
             this.props.dispatch(showConfirmation(true));
           }}
         >
-          Purchase
+          Place Order
         </Button>
         <Button
           style={{

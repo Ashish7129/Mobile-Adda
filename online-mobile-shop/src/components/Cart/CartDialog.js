@@ -24,11 +24,66 @@ class ConnectedCartDialog extends Component {
       return accumulator + item.price * item.quantity;
     }, 0);
 
+    if (this.props.items.length == 0) {
+      return (
+        <Dialog
+          open={this.props.open}
+          onClose={() => {
+            this.props.dispatch(setCheckedOutItems(this.props.items));
+            this.props.dispatch(showCartDlg(false));
+          }}
+        >
+          <AppBar
+            position="static"
+            style={{
+              background: "linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)",
+            }}
+          >
+            <Toolbar>
+              <ShoppingCartIcon
+                fontSize="large"
+                style={{ color: "white", marginRight: 20 }}
+              />
+              Shopping Cart
+            </Toolbar>
+          </AppBar>
+
+          <div
+            style={{
+              maxHeight: 400,
+              padding: 10,
+              overflow: "auto",
+            }}
+          >
+            <div
+              style={{ display: "flex", padding: 20, alignSelf: "flex-end" }}
+            >
+              <Button
+                style={{
+                  background:
+                    "linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)",
+                  color: "white",
+                  fontWeight: 200,
+                  marginRight: 10,
+                }}
+                onClick={() => {
+                  this.props.dispatch(showCartDlg(false));
+                  this.props.history.push("/");
+                }}
+              >
+                Continue Shopping
+              </Button>
+            </div>
+          </div>
+        </Dialog>
+      );
+    }
     return (
       <div>
         <Dialog
           open={this.props.open}
           onClose={() => {
+            this.props.dispatch(setCheckedOutItems(this.props.items));
             this.props.dispatch(showCartDlg(false));
           }}
         >
@@ -55,7 +110,13 @@ class ConnectedCartDialog extends Component {
             }}
           >
             <Table>
-              <TableHead>
+              <TableHead
+                style={{
+                  background:
+                    "linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)",
+                  color: "white",
+                }}
+              >
                 <TableRow>
                   <TableCell></TableCell>
                   <TableCell>Product(Mobile)</TableCell>

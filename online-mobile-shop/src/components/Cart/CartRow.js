@@ -10,6 +10,7 @@ import {
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 import { Link } from "react-router-dom";
+import DeleteIcon from "@material-ui/icons/Delete";
 
 const CartRow = (props) => {
   let { item, items } = props;
@@ -48,15 +49,13 @@ const CartRow = (props) => {
       </TableCell>
       <TableCell>{item.price}</TableCell>
       <TableCell>
-        <Button
-          color="secondary"
+        <DeleteIcon
+          style={{ color: "#FE6B8B" }}
           onClick={() => {
             props.dispatch(deleteCartProduct(item.id));
             props.dispatch(setCheckedOutItems(items));
           }}
-        >
-          Delete
-        </Button>
+        ></DeleteIcon>
       </TableCell>
     </TableRow>
   );
