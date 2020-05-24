@@ -77,6 +77,7 @@ class HeaderContainer extends Component {
                         this.props.history.push(
                           "/?term=" + this.state.searchTerm
                         );
+                        this.setState({ searchTerm: "" });
                       }}
                     >
                       <SearchIcon style={{ fontSize: 25, color: "#c1062f" }} />
