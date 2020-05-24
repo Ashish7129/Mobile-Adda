@@ -1,20 +1,21 @@
 // Simulate authentication service
 const Auth = {
-  _isAuthenticated: false,
+  isAuthenticated: false,
 
   authenticate(name, pass, cb) {
-    this._isAuthenticated = true;
+    this.isAuthenticated = true;
     setTimeout(
       () =>
         cb({
           name: name,
+          pass: pass,
         }),
       100
     );
   },
 
   signout(cb) {
-    this._isAuthenticated = false;
+    this.isAuthenticated = false;
     setTimeout(cb, 100);
   },
 };

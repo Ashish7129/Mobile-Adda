@@ -6,7 +6,11 @@ import Link from "@material-ui/core/Link";
 
 function Copyright() {
   return (
-    <Typography variant="body1" color="textSecondary" align="center">
+    <Typography
+      variant="body1"
+      style={{ color: "white", fontSize: 18, fontWeight: 600 }}
+      align="center"
+    >
       {"Copyright © "}
       <Link color="inherit" href="https://github.com/Ashish7129">
         Mobile Adda

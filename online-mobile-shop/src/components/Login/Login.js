@@ -81,7 +81,6 @@ class ConnectedLogin extends Component {
               marginTop: 20,
             }}
             onClick={() => {
-              // Simulate authentication call
               Auth.authenticate(
                 this.state.userName,
                 this.state.pass,
