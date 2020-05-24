@@ -70,7 +70,8 @@ class ProductContainer extends Component {
           totalProducts={resultData.length}
           parsedQS={termToSearch}
         />
-        <div>
+
+        <div style={{ marginTop: 100, marginBottom: 100 }}>
           {resultData.map((product) => (
             <ProductCard key={product.id} product={product} />
           ))}
@@ -118,7 +119,7 @@ class ProductContainer extends Component {
     //console.log(termToSearch);
     termToSearch.page = termToSearch.page || 1;
     termToSearch.sortValue = termToSearch.sortValue || "lh";
-    termToSearch.productsPerPage = termToSearch.productsPerPage || 4;
+    termToSearch.productsPerPage = termToSearch.productsPerPage || 8;
     let resultData = this.props.productData.products;
     let totalProductsCount;
     //console.log(this.state.totalProducts);

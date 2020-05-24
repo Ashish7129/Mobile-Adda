@@ -17,8 +17,6 @@ function App() {
       <Header />
       <div className="app-body">
         <div className="container">
-          <CartDialog />
-          <OrderConfirmation />
           <Switch>
             <Route path="/" exact component={ProductContainer} />
             <Route path="/product/:id" component={ProductDetail} />
@@ -30,6 +28,8 @@ function App() {
               )}
             />
           </Switch>
+          <CartDialog />
+          <OrderConfirmation />
         </div>
       </div>
       <Footer />

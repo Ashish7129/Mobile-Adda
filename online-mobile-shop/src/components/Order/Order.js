@@ -28,6 +28,7 @@ class ConnectedOrder extends Component {
         <Table>
           <TableHead>
             <TableRow>
+              <TableCell></TableCell>
               <TableCell>Item name</TableCell>
               <TableCell>Price</TableCell>
               <TableCell>Quantity</TableCell>
@@ -37,6 +38,9 @@ class ConnectedOrder extends Component {
             {this.props.checkedOutItems.map((item, index) => {
               return (
                 <TableRow key={item.id}>
+                  <TableCell>
+                    <img src={item.imageUrls[2]} />
+                  </TableCell>
                   <TableCell>{item.name}</TableCell>
                   <TableCell>{item.price}</TableCell>
                   <TableCell>{item.quantity}</TableCell>
