@@ -9,6 +9,8 @@ import CardContent from "@material-ui/core/CardContent";
 import Tooltip from "@material-ui/core/Tooltip";
 import Button from "@material-ui/core/Button";
 import Rating from "@material-ui/lab/Rating";
+import ViewHeadlineIcon from "@material-ui/icons/ViewHeadline";
+import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 
 class ProductCard extends Component {
   render() {
@@ -64,7 +66,7 @@ class ProductCard extends Component {
             color="secondary"
             size="large"
             style={{
-              marginRight: 60,
+              marginRight: 30,
               marginLeft: 60,
               background: "linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)",
               color: "white",
@@ -74,7 +76,10 @@ class ProductCard extends Component {
               this.props.history.push("/product/" + this.props.product.id);
             }}
           >
-            {" "}
+            <ViewHeadlineIcon
+              color="secondary"
+              style={{ marginRight: 5, color: "white" }}
+            />{" "}
             VIEW DETAIL
           </Button>
           <Tooltip title="Add to cart">
@@ -96,6 +101,10 @@ class ProductCard extends Component {
               }}
               aria-label="Add to shopping cart"
             >
+              <ShoppingCartIcon
+                color="secondary"
+                style={{ marginRight: 5, color: "white" }}
+              />
               ADD TO CART
             </Button>
           </Tooltip>

@@ -12,6 +12,7 @@ import AddShoppingCartIcon from "@material-ui/icons/AddShoppingCart";
 import TextField from "@material-ui/core/TextField";
 import Rating from "@material-ui/lab/Rating";
 import axios from "axios";
+import ReplyIcon from "@material-ui/icons/Reply";
 
 const mapStateToProps = (state) => {
   return {
@@ -136,6 +137,7 @@ class ProductDetailComponent extends Component {
                   marginLeft: 20,
                   background:
                     "linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)",
+                  color: "white",
                 }}
                 onClick={() => {
                   this.props.dispatch(
@@ -148,9 +150,30 @@ class ProductDetailComponent extends Component {
               >
                 <AddShoppingCartIcon
                   color="secondary"
-                  style={{ marginRight: 5 }}
+                  style={{ marginRight: 5, color: "white" }}
                 />{" "}
                 Add to Cart
+              </Button>
+            </div>
+            <div>
+              <Button
+                onClick={() => {
+                  this.props.history.push("/");
+                }}
+                style={{
+                  marginTop: 10,
+                  marginBottom: 10,
+                  background:
+                    "linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)",
+                  color: "white",
+                  fontWeight: 200,
+                }}
+              >
+                <ReplyIcon
+                  color="secondary"
+                  style={{ marginRight: 5, color: "white" }}
+                />{" "}
+                Back
               </Button>
             </div>
           </div>
