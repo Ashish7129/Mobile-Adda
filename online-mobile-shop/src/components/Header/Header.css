@@ -16,3 +16,11 @@
   width: 80px;
   height: 80px;
 }
+
+.full-screen {
+  background-image: url(../../Utils/logo_v2.png);
+  background-repeat: no-repeat;
+  background-size: 780px;
+  width: 780px;
+  height: 780px;
+}

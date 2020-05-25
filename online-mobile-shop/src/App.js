@@ -10,6 +10,7 @@ import CartDialog from "./components/Cart/CartDialog";
 import Order from "./components/Order/Order";
 import AuthGuard from "./components/Order/AuthGuardCheckout";
 import OrderConfirmation from "./components/Order/OrderConfirmation";
+import Button from "@material-ui/core/Button";
 
 function App() {
   return (
@@ -24,7 +25,30 @@ function App() {
             <AuthGuard path="/order" component={Order} />
             <Route
               component={() => (
-                <div style={{ padding: 20 }}>Page not found</div>
+                <div
+                  style={{
+                    margin: "auto",
+                    display: "flex",
+                    padding: 20,
+                  }}
+                >
+                  <div class="full-screen"></div>
+                  <div>
+                    <span>No Page Found </span>
+                    <a href="/" style={{ textDecoration: "none" }}>
+                      <Button
+                        style={{
+                          background:
+                            "linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)",
+                          color: "white",
+                          fontWeight: 200,
+                        }}
+                      >
+                        Continue Shopping
+                      </Button>
+                    </a>
+                  </div>
+                </div>
               )}
             />
           </Switch>
