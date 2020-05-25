@@ -81,8 +81,8 @@ class ConnectedLogin extends Component {
               marginTop: 20,
             }}
             onClick={() => {
-              console.log(this.state);
-              console.log(this.state.pass !== "nimda");
+              //console.log(this.state);
+              //console.log(this.state.pass !== "nimda");
               Auth.authenticate(
                 this.state.userName,
                 this.state.pass,
