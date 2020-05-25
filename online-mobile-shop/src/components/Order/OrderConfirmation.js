@@ -30,7 +30,7 @@ class OrderConfirmation extends Component {
               background: "linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)",
             }}
           >
-            <Toolbar style={{ width: 800, maxWidth: "fit-content" }}>
+            <Toolbar style={{ maxWidth: "fit-content" }}>
               Order Confirmation
             </Toolbar>
           </AppBar>

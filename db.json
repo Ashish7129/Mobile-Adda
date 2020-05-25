@@ -8,7 +8,7 @@
       "rating": 4.3,
       "imageUrls": [
         "https://www.91-img.com/pictures/135258-v5-xiaomi-redmi-note-8-pro-mobile-phone-medium-1.jpg",
-        "https://www.91-img.com/gallery_images_uploads/9/a/9accbc7b6b36f6bab10a84cc487faee993778821.jpg",
+        "https://www.91-img.com/gallery_images_uploads/8/c/8c58083021238c09582fa9b5066571379e07c4ee.jpg",
         "https://www.91-img.com/pictures/135258-v5-xiaomi-redmi-note-8-pro-mobile-phone-thumb-1.jpg"
       ]
     },
@@ -20,7 +20,7 @@
       "rating": 4.3,
       "imageUrls": [
         "https://www.91-img.com/pictures/135480-v6-xiaomi-redmi-note-8-mobile-phone-medium-1.jpg",
-        "https://www.91-img.com/gallery_images_uploads/9/a/9accbc7b6b36f6bab10a84cc487faee993778821.jpg",
+        "https://www.91-img.com/gallery_images_uploads/a/6/a6207bb9d06d606ce3b14aed1fd1d6200b75ec03.jpg",
         "https://www.91-img.com/pictures/135480-v6-xiaomi-redmi-note-8-mobile-phone-thumb-1.jpg"
       ]
     },
@@ -44,7 +44,7 @@
       "rating": 4.3,
       "imageUrls": [
         "https://www.91-img.com/pictures/138312-v6-apple-iphone-se-2020-mobile-phone-medium-1.jpg",
-        "https://www.91-img.com/gallery_images_uploads/3/b/3bd4f074bd21e3c4f44302f2785d29a512379a8a.jpg",
+        "https://www.91-img.com/gallery_images_uploads/b/7/b79f4916657f7d764f547a688900788388991661.jpg",
         "https://www.91-img.com/pictures/138312-v6-apple-iphone-se-2020-mobile-phone-thumb-1.jpg"
       ]
     },
@@ -56,7 +56,7 @@
       "rating": 4.6,
       "imageUrls": [
         "https://www.91-img.com/pictures/135857-v3-apple-iphone-11-pro-max-mobile-phone-medium-1.jpg",
-        "https://www.91-img.com/gallery_images_uploads/3/b/3bd4f074bd21e3c4f44302f2785d29a512379a8a.jpg",
+        "https://www.91-img.com/gallery_images_uploads/c/4/c4246a31e847b847ab6d88fee90a32a032aaee30.jpg",
         "https://www.91-img.com/pictures/135857-v3-apple-iphone-11-pro-max-mobile-phone-thumb-1.jpg"
       ]
     },
@@ -68,7 +68,7 @@
       "rating": 4.2,
       "imageUrls": [
         "https://www.91-img.com/pictures/104716-v1-apple-iphone-7-plus-mobile-phone-medium-1.jpg",
-        "https://www.91-img.com/gallery_images_uploads/3/b/3bd4f074bd21e3c4f44302f2785d29a512379a8a.jpg",
+        "https://www.91-img.com/gallery_images_uploads/8/5/857e75a13c245978b382a88472aa37efb42dc724.jpg",
         "https://www.91-img.com/pictures/104716-v1-apple-iphone-7-plus-mobile-phone-thumb-1.jpg"
       ]
     },
@@ -152,20 +152,8 @@
       "rating": 3.9,
       "imageUrls": [
         "https://www.91-img.com/pictures/134573-v4-nokia-2.2-mobile-phone-medium-1.jpg",
-        "https://www.91-img.com/gallery_images_uploads/1/2/1256db862146915d83105af82b2190f13fae43c6.jpg",
+        "https://www.91-img.com/gallery_images_uploads/3/8/38f2634395eb005b0d940baabdd1f3a23f4bfa84.jpg",
         "https://www.91-img.com/pictures/134573-v4-nokia-2.2-mobile-phone-thumb-1.jpg"
-      ]
-    },
-    {
-      "id": 19,
-      "name": "Nokia 2.3",
-      "category": "Nokia",
-      "price": 7199,
-      "rating": 4.2,
-      "imageUrls": [
-        "https://www.91-img.com/pictures/136406-v2-nokia-2.3-mobile-phone-medium-1.jpg",
-        "https://www.91-img.com/gallery_images_uploads/f/e/fe3b5d1bb431b490d716373f065cd98d71016e40.jpg",
-        "https://www.91-img.com/pictures/136406-v2-nokia-2.3-mobile-phone-thumb-1.jpg"
       ]
     },
     {
@@ -178,6 +166,18 @@
         "https://www.91-img.com/pictures/135613-v10-samsung-galaxy-m31-mobile-phone-medium-1.jpg",
         "https://www.91-img.com/gallery_images_uploads/0/b/0b1bf85a924213b991047321791afcc993ab6fdb.jpg",
         "https://www.91-img.com/pictures/135613-v10-samsung-galaxy-m31-mobile-phone-thumb-1.jpg"
+      ]
+    },
+    {
+      "id": 29,
+      "name": "OnePlus 7T",
+      "category": "OnePlus",
+      "price": 34999,
+      "rating": 4.5,
+      "imageUrls": [
+        "https://www.91-img.com/pictures/135637-v5-oneplus-7t-mobile-phone-medium-1.jpg",
+        "https://www.91-img.com/gallery_images_uploads/2/2/22164780e5492b176bc61c73af2ba99e23a6c689.jpg",
+        "https://www.91-img.com/pictures/135637-v5-oneplus-7t-mobile-phone-thumb-1.jpg"
       ]
     }
   ]
