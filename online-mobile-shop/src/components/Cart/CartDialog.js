@@ -13,6 +13,7 @@ import CartRow from "./CartRow";
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCartOutlined";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
+import ReplyIcon from "@material-ui/icons/Reply";
 
 const mapStateToProps = (state) => {
   return { open: state.cart.showCartDialog, items: state.cart.cartItems };
@@ -72,6 +73,11 @@ class ConnectedCartDialog extends Component {
                   this.props.history.push("/");
                 }}
               >
+                {" "}
+                <ReplyIcon
+                  color="secondary"
+                  style={{ marginRight: 5, color: "white" }}
+                />
                 Continue Shopping
               </Button>
             </div>
@@ -178,6 +184,11 @@ class ConnectedCartDialog extends Component {
                 this.props.history.push("/");
               }}
             >
+              {" "}
+              <ReplyIcon
+                color="secondary"
+                style={{ marginRight: 5, color: "white" }}
+              />
               Continue Shopping
             </Button>
             <Button

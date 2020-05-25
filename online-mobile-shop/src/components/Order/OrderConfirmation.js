@@ -6,6 +6,7 @@ import { connect } from "react-redux";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import Button from "@material-ui/core/Button";
+import ReplyIcon from "@material-ui/icons/Reply";
 
 // Order Confirmation Popup with thank you message
 const mapStateToProps = (state) => {
@@ -56,6 +57,10 @@ class OrderConfirmation extends Component {
               fontWeight: 200,
             }}
           >
+            <ReplyIcon
+              color="secondary"
+              style={{ marginRight: 5, color: "white" }}
+            />
             Continue Shopping
           </Button>
         </Dialog>

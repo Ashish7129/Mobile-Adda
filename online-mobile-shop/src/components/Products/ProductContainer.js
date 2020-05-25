@@ -65,6 +65,7 @@ class ProductContainer extends Component {
     }
     return (
       <div
+        className="products"
         style={{
           height: "100%",
           display: "flex",

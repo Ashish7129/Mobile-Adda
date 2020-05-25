@@ -9,6 +9,7 @@ import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import { setCheckedOutItems, deleteCart, showConfirmation } from "../../redux";
 import OrderConfirmation from "./OrderConfirmation";
+import ReplyIcon from "@material-ui/icons/Reply";
 
 const mapStateToProps = (state) => {
   return {
@@ -40,6 +41,11 @@ class ConnectedOrder extends Component {
               this.props.history.push("/");
             }}
           >
+            {" "}
+            <ReplyIcon
+              color="secondary"
+              style={{ marginRight: 5, color: "white" }}
+            />
             Continue Shopping
           </Button>
         </div>
