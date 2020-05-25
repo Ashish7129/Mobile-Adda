@@ -81,12 +81,14 @@ class ConnectedLogin extends Component {
               marginTop: 20,
             }}
             onClick={() => {
+              console.log(this.state);
+              console.log(this.state.pass !== "nimda");
               Auth.authenticate(
                 this.state.userName,
                 this.state.pass,
                 (user) => {
                   if (
-                    this.state.userName !== "admin" &&
+                    this.state.userName !== "admin" ||
                     this.state.pass !== "nimda"
                   ) {
                     this.setState({ wrongCred: true });

@@ -14,7 +14,7 @@ code {
 
 .container {
   margin: 0 auto;
-  width: 50%;
+  width: 56%;
 }
 
 @media screen and (max-width: 680px) {
