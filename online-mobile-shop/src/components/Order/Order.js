@@ -21,6 +21,7 @@ class ConnectedOrder extends Component {
     let totalPrice = this.props.checkedOutItems.reduce((accumulator, item) => {
       return accumulator + item.price * item.quantity;
     }, 0);
+    let gstPrice = totalPrice !== 0 ? Math.ceil(totalPrice * 0.18) : 0;
     if (this.props.checkedOutItems.length == 0) {
       return (
         <div style={{ padding: 10 }}>
@@ -80,9 +81,19 @@ class ConnectedOrder extends Component {
 
         <div
           style={{
-            color: "#504F5A",
+            color: "grey",
             marginLeft: 5,
             marginTop: 50,
+            fontSize: 10,
+          }}
+        >
+          Incl GST: Rs. {gstPrice}
+        </div>
+        <div
+          style={{
+            color: "#504F5A",
+            marginLeft: 5,
+            marginTop: 5,
             fontSize: 22,
           }}
         >

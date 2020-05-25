@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
-import { addProductInCart } from "../../redux";
+import { addProductInCart, showCartDlg } from "../../redux";
 import Card from "@material-ui/core/Card";
 import CardActionArea from "@material-ui/core/CardActionArea";
 import CardActions from "@material-ui/core/CardActions";
@@ -15,7 +15,7 @@ class ProductCard extends Component {
     return (
       <Card
         style={{
-          width: 440,
+          width: 500,
           marginLeft: 23,
           marginBottom: 10,
           display: "inline-block",
@@ -33,15 +33,14 @@ class ProductCard extends Component {
               alt={this.props.product.name}
             />
           </div>
-          <CardContent style={{ height: 50 }}>
+          <CardContent style={{ height: 90 }}>
             <div
               style={{
                 marginLeft: 5,
                 fontWeight: "bold",
                 fontSize: 21,
-                whiteSpace: "nowrap",
-                overflow: "hidden",
-                textOverflow: "ellipsis",
+                whiteSpace: "wrap",
+                width: 200,
               }}
             >
               {this.props.product.name}
@@ -51,7 +50,7 @@ class ProductCard extends Component {
               value={this.props.product.rating}
               readOnly
             />
-            <div style={{ margin: 5, fontSize: 30 }}>
+            <div style={{ margin: 5, fontSize: 30, color: "red" }}>
               {"Rs. "}
               {this.props.product.price}{" "}
             </div>
@@ -66,7 +65,7 @@ class ProductCard extends Component {
             size="large"
             style={{
               marginRight: 60,
-              marginLeft: 30,
+              marginLeft: 60,
               background: "linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)",
               color: "white",
               fontWeight: 200,
@@ -93,6 +92,7 @@ class ProductCard extends Component {
                 this.props.dispatch(
                   addProductInCart({ ...this.props.product, quantity: 1 })
                 );
+                this.props.dispatch(showCartDlg(true));
               }}
               aria-label="Add to shopping cart"
             >

@@ -121,18 +121,6 @@
       ]
     },
     {
-      "id": 16,
-      "name": "Nokia 6.3",
-      "category": "Nokia",
-      "price": 14999,
-      "rating": 5.0,
-      "imageUrls": [
-        "https://www.91-img.com/pictures/138378-v1-nokia-6.3-mobile-phone-medium-1.jpg",
-        "https://www.91-img.com/gallery_images_uploads/d/2/d26014996686d3cdd758504291404d2e27c52b6f.jpg",
-        "https://www.91-img.com/pictures/138378-v1-nokia-6.3-mobile-phone-thumb-1.jpg"
-      ]
-    },
-    {
       "id": 17,
       "name": "Nokia 6.1 Plus (Nokia X6)",
       "category": "Nokia",
@@ -166,6 +154,18 @@
         "https://www.91-img.com/pictures/135613-v10-samsung-galaxy-m31-mobile-phone-medium-1.jpg",
         "https://www.91-img.com/gallery_images_uploads/0/b/0b1bf85a924213b991047321791afcc993ab6fdb.jpg",
         "https://www.91-img.com/pictures/135613-v10-samsung-galaxy-m31-mobile-phone-thumb-1.jpg"
+      ]
+    },
+    {
+      "id": 26,
+      "name": "OnePlus 8 Pro",
+      "category": "OnePlus",
+      "price": 54999,
+      "rating": 3.6,
+      "imageUrls": [
+        "https://www.91-img.com/pictures/136164-v6-oneplus-8-pro-mobile-phone-medium-1.jpg",
+        "https://www.91-img.com/gallery_images_uploads/2/2/2271b738aa5a5e1feed587b15708f4472591fc99.jpg",
+        "https://www.91-img.com/pictures/136164-v6-oneplus-8-pro-mobile-phone-thumb-1.jpg"
       ]
     },
     {

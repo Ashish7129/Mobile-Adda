@@ -12,8 +12,9 @@ class ProductsHeader extends Component {
     let subtitle = (
       <React.Fragment>
         <span style={{ fontSize: 20, color: "gray", marginTop: 5 }}>
-          {totalProducts +
-            " result" +
+          {"Showing " +
+            totalProducts +
+            " product" +
             (totalProducts === 1 ? " " : "s ") +
             (keyword ? "for " : "")}
         </span>

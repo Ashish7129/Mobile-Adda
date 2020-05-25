@@ -23,6 +23,7 @@ class ConnectedCartDialog extends Component {
     let totalPrice = this.props.items.reduce((accumulator, item) => {
       return accumulator + item.price * item.quantity;
     }, 0);
+    let gstPrice = totalPrice !== 0 ? Math.ceil(totalPrice * 0.18) : 0;
 
     if (this.props.items.length == 0) {
       return (
@@ -133,7 +134,28 @@ class ConnectedCartDialog extends Component {
             </Table>
           </div>
 
-          <div style={{ display: "flex", padding: 20, alignSelf: "flex-end" }}>
+          <div
+            style={{ display: "flex", paddingRight: 20, alignSelf: "flex-end" }}
+          >
+            <div
+              style={{
+                flex: 1,
+                fontSize: 10,
+                color: "grey",
+              }}
+            >
+              {" "}
+              Incl. GST: Rs {gstPrice}
+            </div>
+          </div>
+          <div
+            style={{
+              display: "flex",
+              padding: 20,
+              color: "red",
+              alignSelf: "flex-end",
+            }}
+          >
             <div
               style={{
                 flex: 1,
