@@ -41,6 +41,7 @@ class ProductsHeader extends Component {
             display: "flex",
             alignItems: "center",
             backgroundColor: "#fe875e61",
+            margin: 15,
           }}
         >
           <div style={{ flex: 1 }}>{subtitle}</div>
