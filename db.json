@@ -25,15 +25,15 @@
       ]
     },
     {
-      "id": 7,
-      "name": "Xiaomi Redmi 8A",
-      "category": "Xiaomi",
-      "price": 6799,
-      "rating": 3.5,
+      "id": 25,
+      "name": "Samsung Galaxy A71",
+      "category": "Samsung",
+      "price": 12999,
+      "rating": 4.5,
       "imageUrls": [
-        "https://www.91-img.com/pictures/135611-v6-xiaomi-redmi-8a-mobile-phone-medium-1.jpg",
-        "https://www.91-img.com/gallery_images_uploads/9/a/9accbc7b6b36f6bab10a84cc487faee993778821.jpg",
-        "https://www.91-img.com/pictures/135611-v6-xiaomi-redmi-8a-mobile-phone-thumb-1.jpg"
+        "https://www.91-img.com/pictures/135733-v7-samsung-galaxy-a71-mobile-phone-medium-1.jpg",
+        "https://www.91-img.com/gallery_images_uploads/d/5/d5aeaecd38fb96fd522918c352dd13ab3ff84eee.jpg",
+        "https://www.91-img.com/pictures/135733-v7-samsung-galaxy-a71-mobile-phone-thumb-1.jpg"
       ]
     },
     {
