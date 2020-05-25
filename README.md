@@ -30,9 +30,24 @@ Deployed the data on Online JSON server : (https://my-json-server.typicode.com/A
 I have deployed my application on the surge.
 Mobile Adda : (https://mobile-adda.surge.sh)
 
-## `Application Screenshot`
-![HomePage](https://github.com/Ashish7129/Mobile-Adda/blob/master/online-mobile-shop/src/Utils/screenshots/Screenshot%20(131).png)
-![HomePage](https://github.com/Ashish7129/Mobile-Adda/blob/master/online-mobile-shop/src/Utils/screenshots/Screenshot%20(132).png)
-![HomePage](https://github.com/Ashish7129/Mobile-Adda/blob/master/online-mobile-shop/src/Utils/screenshots/Screenshot%20(133).png)
-![HomePage](https://github.com/Ashish7129/Mobile-Adda/blob/master/online-mobile-shop/src/Utils/screenshots/Screenshot%20(134).png)
-![HomePage](https://github.com/Ashish7129/Mobile-Adda/blob/master/online-mobile-shop/src/Utils/screenshots/Screenshot%20(135).png)
+## `Application Screenshots`
+
+### `Home Page`
+
+![HomePage](<https://github.com/Ashish7129/Mobile-Adda/blob/master/online-mobile-shop/src/Utils/screenshots/Screenshot%20(131).png>)
+
+### `Add to Cart Popup`
+
+![HomePage](<https://github.com/Ashish7129/Mobile-Adda/blob/master/online-mobile-shop/src/Utils/screenshots/Screenshot%20(132).png>)
+
+### `Checkout page`
+
+![HomePage](<https://github.com/Ashish7129/Mobile-Adda/blob/master/online-mobile-shop/src/Utils/screenshots/Screenshot%20(133).png>)
+
+### `Login Page`
+
+![HomePage](<https://github.com/Ashish7129/Mobile-Adda/blob/master/online-mobile-shop/src/Utils/screenshots/Screenshot%20(134).png>)
+
+### `Order Confirmation`
+
+![HomePage](<https://github.com/Ashish7129/Mobile-Adda/blob/master/online-mobile-shop/src/Utils/screenshots/Screenshot%20(135).png>)
