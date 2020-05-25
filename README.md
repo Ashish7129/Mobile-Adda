@@ -16,7 +16,7 @@ Develop an [Online Mobile Store](https://mobile-adda.surge.sh) using React. Appl
 - Logout should appear in dropdown when clicked on username (when logged in)
 - Unit Testing should be done of at least 2 components
 
-## ``Login Credentials`
+## `Login Credentials`
 
 username : admin
 password : nimda
@@ -24,3 +24,8 @@ password : nimda
 ## `Products Data`
 
 Deployed the data on Online JSON server : (https://my-json-server.typicode.com/Ashish7129/online-mobile-store/products)
+
+## `Deployment on surge`
+
+I have deployed my application on the surge.
+Mobile Adda : (https://mobile-adda.surge.sh)
